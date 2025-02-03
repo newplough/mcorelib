@@ -1,23 +1,22 @@
-# MCoreLib¼ò½é
+# MCoreLibç®€ä»‹
 
-ÊµÏÖÀàËÆQtºËĞÄ¿âµÄÒ»Ğ©¹¦ÄÜ£¬°üÀ¨ĞÅºÅÓë²Û¡£¿ÉÒÔ·½±ãµØÒÆÖ²µ½µ¥Æ¬»úÏµÍ³ÖĞ¡£¾­¹ı²âÊÔ¿ÉÒÔÔÚlinux¡¢windowsºÍstm32f407µ¥Æ¬»úÏµÍ³ÖĞÊ¹ÓÃ¡£
-It implements some functions similar to the Qt core library, including signals and slots. It can be easily ported to microcontroller systems. After testing, it can be used on Linux, Windows, and STM32F407 microcontroller systems.
+å®ç°ç±»ä¼¼Qtæ ¸å¿ƒåº“çš„ä¸€äº›åŠŸèƒ½ï¼ŒåŒ…æ‹¬ä¿¡å·ä¸æ§½ã€‚å¯ä»¥æ–¹ä¾¿åœ°ç§»æ¤åˆ°å•ç‰‡æœºç³»ç»Ÿä¸­ã€‚ç»è¿‡æµ‹è¯•å¯ä»¥åœ¨linuxã€windowså’Œstm32f407å•ç‰‡æœºç³»ç»Ÿä¸­ä½¿ç”¨ã€‚
 
-## MCoreLibÒ»Ğ©ÌØµã
+## MCoreLibä¸€äº›ç‰¹ç‚¹
 
-* Ö§³ÖĞÅºÅÓë²Û£¬²»ĞèÒªÀàËÆmoc¹¤¾ß¸¨Öú
-* Ö§³ÖÍ¬Ïß³ÌÓë¿çÏß³ÌÍ¶µİĞÅºÅ
-* ¿É±äÊı¾İÀàĞÍMVariantÖ§³Ö·ÅÈë×Ô¶¨ÒåÊı¾İÀàĞÍ
-* Ê¹ÓÃÊ±¼ä¶ÑÊµÏÖµÄ¶¨Ê±Æ÷¹ÜÀí
-* Ö§³ÖÔÚwindows¡¢linuxºÍµ¥Æ¬»úµÈÏµÍ³ÖĞÊ¹ÓÃ
+* æ”¯æŒä¿¡å·ä¸æ§½ï¼Œä¸éœ€è¦ç±»ä¼¼mocå·¥å…·è¾…åŠ©
+* æ”¯æŒåŒçº¿ç¨‹ä¸è·¨çº¿ç¨‹æŠ•é€’ä¿¡å·
+* å¯å˜æ•°æ®ç±»å‹MVariantæ”¯æŒæ”¾å…¥è‡ªå®šä¹‰æ•°æ®ç±»å‹
+* ä½¿ç”¨æ—¶é—´å †å®ç°çš„å®šæ—¶å™¨ç®¡ç†
+* æ”¯æŒåœ¨windowsã€linuxå’Œå•ç‰‡æœºç­‰ç³»ç»Ÿä¸­ä½¿ç”¨
 
-## MCoreLibÊ¹ÓÃÊ¾Àı
+## MCoreLibä½¿ç”¨ç¤ºä¾‹
 
-### Ö÷º¯Êı
+### ä¸»å‡½æ•°
 
-`ºÍQtÒ»Ñù£¬ÔÚÖ÷º¯ÊıÖĞĞèÒªÊ¹ÓÃapplication¶ÔÏó`
+`å’ŒQtä¸€æ ·ï¼Œåœ¨ä¸»å‡½æ•°ä¸­éœ€è¦ä½¿ç”¨applicationå¯¹è±¡`
 
-* Ö÷º¯Êı±àĞ´Ê¾Àı
+* ä¸»å‡½æ•°ç¼–å†™ç¤ºä¾‹
   
       extern "C" void test_main(void)
       {
@@ -32,25 +31,25 @@ It implements some functions similar to the Qt core library, including signals a
           app.exec();
       }
 
-### ĞÅºÅÓë²Ûº¯Êı
+### ä¿¡å·ä¸æ§½å‡½æ•°
 
-`ÓÉÓÚÊ¹ÓÃºêµÄ·½Ê½ÊµÏÖ£¬Ã»ÄÜ×öµ½ÓëQtÍê³ÉÒ»Ñù`
+`ç”±äºä½¿ç”¨å®çš„æ–¹å¼å®ç°ï¼Œæ²¡èƒ½åšåˆ°ä¸Qtå®Œæˆä¸€æ ·`
 
-* ÓÃDECLARE_SIGºêÉùÃ÷ĞÅºÅ
+* ç”¨DECLARE_SIGå®å£°æ˜ä¿¡å·
   
-      //! ¶¨ÒåĞÅºÅ·¢ËÍÀà
+      //! å®šä¹‰ä¿¡å·å‘é€ç±»
       class TestSignalClass: public MObject
       {
       public:
-          // ÉùÃ÷ÎŞ²ÎÊıĞÅºÅ
+          // å£°æ˜æ— å‚æ•°ä¿¡å·
           DECLARE_SIG(s0)
-          // ÉùÃ÷1²ÎÊıĞÅºÅ
+          // å£°æ˜1å‚æ•°ä¿¡å·
           DECLARE_SIG(s1, int)
-          // ÉùÃ÷MVariant²ÎÊıĞÅºÅ
+          // å£°æ˜MVariantå‚æ•°ä¿¡å·
           DECLARE_SIG(s1v, MVariant)
       };
 
-* ÓÃDECLARE_SLOTºêÉùÃ÷²Ûº¯Êı
+* ç”¨DECLARE_SLOTå®å£°æ˜æ§½å‡½æ•°
   
       class TestReceiveClass: public MObject
       {
@@ -59,14 +58,14 @@ It implements some functions similar to the Qt core library, including signals a
                   : MObject(name)
           {
           }
-          // ÉùÃ÷²Ûº¯Êı£¬ÎŞ²ÎÊı
+          // å£°æ˜æ§½å‡½æ•°ï¼Œæ— å‚æ•°
           DECLARE_SLOT(TestReceiveClass, testSlot0);
-          // ÉùÃ÷²Ûº¯Êı£¬1¸ö²ÎÊı
+          // å£°æ˜æ§½å‡½æ•°ï¼Œ1ä¸ªå‚æ•°
           DECLARE_SLOT(TestReceiveClass, testSlot1, mint_t);
       
       };
 
-* ÓÃDEFINE_SLOTºê¶¨Òå²Ûº¯Êı    
+* ç”¨DEFINE_SLOTå®å®šä¹‰æ§½å‡½æ•°    
   
       DEFINE_SLOT(TestReceiveClass, testSlot0)
       {
@@ -75,7 +74,7 @@ It implements some functions similar to the Qt core library, including signals a
           LogInfo("%s: %d", __FUNCTION__, counter);
           if (counter >= 10)
           {
-              mApp->quit(); // Ö´ĞĞ10´ÎºóÍË³öapp³ÌĞò
+              mApp->quit(); // æ‰§è¡Œ10æ¬¡åé€€å‡ºappç¨‹åº
           }
       }
       
@@ -85,46 +84,46 @@ It implements some functions similar to the Qt core library, including signals a
           return;
       }
 
-### ĞÅºÅÁ¬½ÓÓëĞÅºÅ·¢³ö
+### ä¿¡å·è¿æ¥ä¸ä¿¡å·å‘å‡º
 
-* Ê¹ÓÃCONNECT_SLOTÁ¬½ÓĞÅºÅÓë²Û£¬Ê¹ÓÃEMIT_SIG·¢³öĞÅºÅ£¬Ê¾ÀıÈçÏÂ£º
+* ä½¿ç”¨CONNECT_SLOTè¿æ¥ä¿¡å·ä¸æ§½ï¼Œä½¿ç”¨EMIT_SIGå‘å‡ºä¿¡å·ï¼Œç¤ºä¾‹å¦‚ä¸‹ï¼š
   
       void testSlot()
       {
           TestSignalClass sender;
           TestReceiveClass reciever;
       
-          // ´Ë´¦ÊÇÍ¬Ïß³Ì¹ØÁªĞÅºÅ
+          // æ­¤å¤„æ˜¯åŒçº¿ç¨‹å…³è”ä¿¡å·
           CONNECT_SLOT(&sender, TestSignalClass::s1, &reciever, TestReceiveClass::testSlot1, int);
       
-          // Æô¶¯²âÊÔÏß³Ì£¬½øĞĞ¿çÏß³Ì¹ØÁªĞÅºÅ
+          // å¯åŠ¨æµ‹è¯•çº¿ç¨‹ï¼Œè¿›è¡Œè·¨çº¿ç¨‹å…³è”ä¿¡å·
           TestTask task(&sender);
           task.start(true);
       
-          // Í¶µİĞÅºÅ
+          // æŠ•é€’ä¿¡å·
           EMIT_SIG(&sender, TestSignalClass::s0);
-          // Í¶µİĞÅºÅ
+          // æŠ•é€’ä¿¡å·
           EMIT_SIG(&sender, TestSignalClass::s1, 32);
-          // Í¶µİMVariantĞÅºÅ
+          // æŠ•é€’MVariantä¿¡å·
           EMIT_SIG(&sender, TestSignalClass::s1v, MVariant(56));
       }
 
 ***
 
-## ÍêÕûÊ¾Àı
+## å®Œæ•´ç¤ºä¾‹
 
-### Çë²Î¿¼´úÂë
+### è¯·å‚è€ƒä»£ç 
 
 [test_timer_slot.cpp](testor/test_timer_slot.cpp)
 [test_variant_slot.cpp](tester/test_variant_slot.cpp)
-[µ¥Æ¬»ústm32f407](project/stm32f407)
+[å•ç‰‡æœºstm32f407](project/stm32f407)
 
 ***
 
-## ÆäËûÒ»Ğ©ËµÃ÷
+## å…¶ä»–ä¸€äº›è¯´æ˜
 
-` vs2022 ±àÒëÍ¨¹ı£¨windows£©` 
-` g++ 9.4.0 ±àÒëÍ¨¹ı£¨linux£©` 
-` STM32CubeIDE 1.17.0 ±àÒëÍ¨¹ı£¨stm32f407£©` 
+` vs2022 ç¼–è¯‘é€šè¿‡ï¼ˆwindowsï¼‰` 
+` g++ 9.4.0 ç¼–è¯‘é€šè¿‡ï¼ˆlinuxï¼‰` 
+` STM32CubeIDE 1.17.0 ç¼–è¯‘é€šè¿‡ï¼ˆstm32f407ï¼‰` 
 
-` ±¾´úÂëÎ´¾­¹ıÑÏ¸ñ²âÊÔ£¬ÄÑÃâ´æÔÚBUG! ` 
+` æœ¬ä»£ç æœªç»è¿‡ä¸¥æ ¼æµ‹è¯•ï¼Œéš¾å…å­˜åœ¨BUG! ` 
