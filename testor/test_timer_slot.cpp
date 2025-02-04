@@ -33,7 +33,7 @@ DEFINE_SLOT(TestClass, testSlotFunc)
     LogInfo("TestClass::testSlotFunc: %d", counter);
     if (counter >= 20)
     {
-        mApp->quit();  // 执行10次后退出app程序
+        mApp->quit();  // 执行20次后退出app程序
     }
 }
 

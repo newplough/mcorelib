@@ -3,11 +3,6 @@ cmake_minimum_required(VERSION 3.0)
 
 set(LIB_NAME mcorelib)
 
-ADD_DEFINITIONS(-D_LIB 
-    -DWITH_OPENSSL
-    -DWITH_DOM
-    -DWITH_PURE_VIRTUAL
-)
 
 SET(LIB_SRCS
     ../sources/mapplication.cpp

@@ -1,6 +1,6 @@
 # MCoreLib简介
 
-实现类似Qt核心库的一些功能，包括信号与槽。可以方便地移植到单片机系统中。经过测试可以在linux、windows和stm32f407单片机系统中使用。
+实现类似Qt核心库的一些功能，包括信号与槽。可以方便地移植到单片机系统中。经过测试，在linux、windows和stm32f407单片机系统中运行正常。
 
 ## MCoreLib一些特点
 
@@ -43,8 +43,10 @@
       public:
           // 声明无参数信号
           DECLARE_SIG(s0)
+      
           // 声明1参数信号
           DECLARE_SIG(s1, int)
+      
           // 声明MVariant参数信号
           DECLARE_SIG(s1v, MVariant)
       };
@@ -58,8 +60,10 @@
                   : MObject(name)
           {
           }
+      
           // 声明槽函数，无参数
           DECLARE_SLOT(TestReceiveClass, testSlot0);
+      
           // 声明槽函数，1个参数
           DECLARE_SLOT(TestReceiveClass, testSlot1, mint_t);
       
@@ -115,7 +119,7 @@
 ### 请参考代码
 
 [test_timer_slot.cpp](testor/test_timer_slot.cpp)
-[test_variant_slot.cpp](tester/test_variant_slot.cpp)
+[test_variant_slot.cpp](testor/test_variant_slot.cpp)
 [单片机stm32f407](project/stm32f407)
 
 ***
